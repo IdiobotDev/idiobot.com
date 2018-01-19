@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% static "askbot/images" as baseUrl %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Social bot for telegram">
+    <meta name="author" content="IdioBOT Wr.">
+    <meta name="keywords" content="idiobot,BOT,Telegram,Question,Answer">
+
+    <title>IdioBot</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'askbot/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="{% static 'askbot/css/freelancer.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'askbot/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Home page</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">{{ guide.lbl_bio }}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#showcases">{{ guide.lbl_showcases }}</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#rules">{{ guide.lbl_rules }}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{% static 'askbot/images/avatar.png' %}" alt="">
+                    <div class="intro-text">
+                        <h1 class="name">IdioBOT</h1>
+                        <hr class="star-light">
+                        <span class="skills">
+                            <a class="btn btn-lg" style="font-weight: 600; font-family: Montserrat,  Helvetica, Arial, sans-serif; text-transform: uppercase; font-size:1.5em; background-color: #0088cc; color:white; border: none" name="nome" href='https://t.me/idiobot'><i class="fa fa-telegram" aria-hidden="true"></i>  {{ guide.lbl_add_me }} </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ guide.lbl_bio }}</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p>{{ guide.txt_bio_1 }}</p>
+                    <p>{{ guide.txt_bio_2 }}</p>
+                    <p>{{ guide.txt_bio_3 }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio Grid Section -->
+    <section class="success" id="showcases">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ guide.lbl_showcases }}</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/cabin.png' %}" class="img-responsive" alt="Cabin">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/cake.png' %}" class="img-responsive" alt="Slice of cake">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/circus.png' %}" class="img-responsive" alt="Circus tent">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/game.png' %}" class="img-responsive" alt="Game controller">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/safe.png' %}" class="img-responsive" alt="Safe">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{% static 'askbot/images/portfolio/submarine.png' %}" class="img-responsive" alt="Submarine">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="rules">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ guide.lbl_rules }}</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p>{{ guide.txt_rules_1 }}</p>
+                    <p>{{ guide.txt_rules_2 }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>{{ guide.lbl_address }}</h3>
+                        <p>Zion</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ guide.lbl_around_web }}</h3>
+                        <p>{{ guide.txt_around_web }}</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>{{ guide.lbl_about }}</h3>
+                        <p>{{ guide.txt_about }}<a href="">Link pagina about</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        Copyright &copy; August 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_questing }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/ask_1.mp4">
+                                </video>    
+                            </div>                        
+                            <p>{{ guide.txt_questing_1 }}</p>
+                            <ul class="list-inline item-details">
+                                <li>{{ guide.txt_questing_2 }}</li>
+                                <li>{{ guide.txt_questing_3 }}</li>
+                                <li>{{ guide.txt_questing_4 }}</li>
+                                <li>{{ guide.txt_questing_5 }}</li>
+                                <li>{{ guide.txt_questing_6 }}</li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_answ }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/answer_1.mp4">
+                                </video>    
+                            </div>                
+                            <p>{{ guide.txt_answ_1 }}</p>
+                            <ul class="list-inline item-details">
+                                <li>{{ guide.txt_answ_2 }}</li>
+                                <li>{{ guide.txt_answ_3 }}</li>
+                                <li>{{ guide.txt_answ_4 }}</li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_reaction }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/reaction_1.mp4">
+                                </video> 
+                            </div>                   
+                            <p>{{ guide.txt_reaction_1 }}</p>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_contact }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/contact_1.mp4">
+                                </video>
+                            </div>                   
+                            <p>{{ guide.txt_contact_1 }}</p>
+                            <ul class="list-inline item-details">
+                                <li>{{ guide.txt_contact_2 }}</li>
+                                <li>{{ guide.txt_contact_3 }}</li>
+                                <li>{{ guide.txt_contact_4}}</li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_inline }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto"  muted="" loop="loop" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/inline_1.mp4">
+                                </video>  
+                            </div>                  
+                            <p>{{ guide.txt_inline_1 }}</p>
+                            <ul class="list-inline item-details">
+                                <li>{{ guide.txt_inline_2 }}</li>
+                                <li>{{ guide.txt_inline_3 }}</li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ guide.lbl_cmd }}</h2>
+                            <hr class="star-primary">
+                            <div class="img-centered">
+                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
+                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/cmd_1.mp4">
+                                </video>
+                            </div>                    
+                            <p>{{ guide.txt_cmd_1 }}</p>
+                            <ul class="list-inline item-details">
+                                <li>{{ guide.txt_cmd_2 }}</li>
+                                <li>{{ guide.txt_cmd_3 }}</li>
+                                <li>{{ guide.txt_cmd_4 }}</li>
+                                <li>{{ guide.txt_cmd_5 }}</li>
+                            </ul>
+                            <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static 'askbot/vendor/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'askbot/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'askbot/js/freelancer.min.js' %}"></script>
+
+</body>
+
+</html>
