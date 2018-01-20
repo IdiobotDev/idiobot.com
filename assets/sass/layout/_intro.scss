@@ -1,0 +1,38 @@
+/* Who am i */
+
+	#who-am-i {
+
+        margin-left: 0;
+        margin-right: 0;
+
+        p {
+            font-size: 1.6em;
+
+            @include breakpoint(medium) {
+                br {
+                    display: none;
+                }
+            }
+
+            @include breakpoint(small) {
+                font-size: 1.25em;
+            }
+        }
+        a {
+            font-size: 0.8em;
+
+            @include breakpoint(medium) {
+                br {
+                    display: none;
+                }
+            }
+
+            @include breakpoint(small) {
+                font-size: 0.8em;
+            }
+        }
+
+		@include breakpoint(large) {
+			background-attachment: scroll;
+		}
+	}

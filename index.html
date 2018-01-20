@@ -1,446 +1,261 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-{% static "askbot/images" as baseUrl %}
-<head>
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Social bot for telegram">
-    <meta name="author" content="IdioBOT Wr.">
-    <meta name="keywords" content="idiobot,BOT,Telegram,Question,Answer">
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
 
-    <title>IdioBot</title>
+					<nav>
+						<ul>
+                            <li><a href="#who-am-i">Who am i?</a></li>
+							<li><a href="#be-helpful">How can i be helpful?</a></li>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="{% static 'askbot/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+							<li><a href="#wcid">What can i do</a></li>
+							<li><a href="#two">I miei ideali</a></li>
+							<li><a href="#three">Segnala Bug</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 
-    <!-- Theme CSS -->
-    <link href="{% static 'askbot/css/freelancer.min.css' %}" rel="stylesheet">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    <!-- Custom Fonts -->
-    <link href="{% static 'askbot/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+				<!-- who-am-i -->
+					<section id="who-am-i" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+							<h1>Idiobot</h1>
+							<p>Hi! I’m IdioBOT and I’m a free Telegram Bot.</p>
 
-</head>
+							<ul class="actions">
+								<li><a href="#be-helpful" class="button scrolly">How can I be helpful?</a></li>
+                                <li><a href="https://t.me/idiobot" class="button scrolly">Add me on Telegram</a></li>
+							</ul>
+						</div>
+					</section>
+                    <section id="be-helpful" class="wrapper style1 fullscreen fade-up">
+                         <div class="inner">
+                            <h1>How can I be helpful?</h1>
+                            <p>Let's say that you can ask me something and I’ll try to satisfy you by collecting other user’s answers.
+                                <br>
+                                So, you could be integral part of the collecting by answering when you’re able (ops: when you want). And, a must for a messaging app, I can get you in touch with who answered your questions.
+                                <br>
+                                <i>
+                                My creator is very lazy, he says that he liked the idea of having someone to ask about anything, hoping that this someone would know the answer, even if he googled instead of him. He wanted to do a very cool AI like in the movies but then, in a moment of insanity, he still believed in human beings (that’s not true, he wouldn’t know how to do the AI). And here I am processing your data 24/7.<i>
+</p>
 
-<body id="page-top" class="index">
-<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">Home page</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">{{ guide.lbl_bio }}</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#showcases">{{ guide.lbl_showcases }}</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#rules">{{ guide.lbl_rules }}</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container" id="maincontent" tabindex="-1">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="{% static 'askbot/images/avatar.png' %}" alt="">
-                    <div class="intro-text">
-                        <h1 class="name">IdioBOT</h1>
-                        <hr class="star-light">
-                        <span class="skills">
-                            <a class="btn btn-lg" style="font-weight: 600; font-family: Montserrat,  Helvetica, Arial, sans-serif; text-transform: uppercase; font-size:1.5em; background-color: #0088cc; color:white; border: none" name="nome" href='https://t.me/idiobot'><i class="fa fa-telegram" aria-hidden="true"></i>  {{ guide.lbl_add_me }} </a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>{{ guide.lbl_bio }}</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p>{{ guide.txt_bio_1 }}</p>
-                    <p>{{ guide.txt_bio_2 }}</p>
-                    <p>{{ guide.txt_bio_3 }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Portfolio Grid Section -->
-    <section class="success" id="showcases">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>{{ guide.lbl_showcases }}</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+</section>
+				<!-- One -->
+					<section id="wcid" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Make a question</h2>
+									<p>Sometimes, for example when you send me a file, I might be slow, if for a few seconds there won't be a sign of life from me, don’t worry, it’s normal. But if you waited too long, try sending me the file again: you can simply forward it</p>
+                                    <p id='mq-hide' style='display:none' >     Sending more text or new files while putting a question will change the question itself, always considering the last inserted elements To edit a question before confirming it you can simply edit the message you sent to me before If the question you’re asking is identical to another question already posted it may not be accepted In order to avoid annoying spam, you can ask question every ten minutes In all the question you must enter the text, you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers
+<br>     <br/>
+<button class="button">Play Demo</button>
+</p>
+									<ul class="actions">
+										<li><button onclick="$('#mq-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+                            <div class="content">
+								<div class="inner">
+                                    <h2>Send an answer</h2>
+                                    <p>In all the answers you can’t enter the text if there’s an attachment, (attachments allowed are the same of before). As for the question, you can edit the answer by sending new messages as long as you do not confirm it</p>
+                                    <p id='sa-hide' style='display:none' >You can’t answer to your question or to the ones you already answered As for questions you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers Per gli utenti della mela morsicata, l'allegato potrebbe non vedersi subito, basta uscire dalla chat e rientrarci
+                                        <br/>     <br/>
+                                    <button class="button">Play Demo</button>
+                                    </p>
+                                    <ul class="actions">
+                                        <li><button onclick="$('#sa-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                    </ul>
+                                </div>
+							</div>
+						</section>
+                        <section>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Submit reaction</h2>
+                                    <p>You can only add one reaction per answer and you can’t change it. Yes, you can add a reaction to your own answers… Let’s go autolikes!!</p>
+                                    <p id='sr-hide' style='display:none' >
+                                        <br/>     <br/>
+                                    <button class="button">Play Demo</button>
+                                    </p>
+                                    <ul class="actions">
+                                        <li><button onclick="$('#sr-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/cabin.png' %}" class="img-responsive" alt="Cabin">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                        </section>
+                        <section>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Contact someone</h2>
+                                    <p>During our first interaction i’ll be asked you, if we allow the authors of the questions we are answering to contact you. For example, you ask a question and there is an answer that strikes you particularly and you’d like to contact him, you’ll receive the author’s presentation message so you could contact him <b>without knowing</b> the phone number.</p>
+                                    <p id='cs-hide' style='display:none' >
+                                          The button CONTACT will only be visible if the question is yours and the author of the answer has initially agreed to be contacted No one will have your phone number, not even me If tapping the “CONTACT” button nothing happens, the author may have unsubscribed    <br/>     <br/>
+                                    <button class="button">Play Demo</button>
+                                    </p>
+                                    <ul class="actions">
+                                        <li><button onclick="$('#cs-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/cake.png' %}" class="img-responsive" alt="Slice of cake">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                        </section>
+                        <section>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Inline</h2>
+                                    <p>If you use INLINE to ask a question, the confirmation message will be sent in the chat in which you are and also it will be visible by everybody. Whoever presses the confirm button will be the author of the question, be fast</p>
+                                    <p id='in-hide' style='display:none' >
+                                               To answer the question or to contact somebody you have to open a private chat with the bot, there’ll be a button that will automatically Pressing the “CONTACT” button or the “ANSWER” button, the “INLINE” will be filled with some parameters, do not change them. If they don’t give results it's because you probably can’t answer that question or contact that user
+
+                        <br/>     <br/>
+                                    <button class="button">Play Demo</button>
+                                    </p>
+                                    <ul class="actions">
+                                        <li><button onclick="$('#in-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/circus.png' %}" class="img-responsive" alt="Circus tent">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                        </section>
+                            <section>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Other functions</h2>
+                                    <p>Functions available through commands:</p>
+                                    <ul>
+                                        <li>
+                                            <strong>/silentmode: </strong>You won’t receive any sound notifications on the submitted questions, only about important messages </li>
+                                            <li><strong>/statistics: </strong>Get your statistics, like number of questions or answers, your rating, etc.. </li>
+                                            <li><strong>/mylastquest: </strong>I send to you your last question (in case you lost it) </li>
+                                            <li><strong>/bug: </strong>For any suggestion use this command, wait for my answer and then write what you want to tell me </li></ul>
+                                            </p>
+                                    <p id='of-hide' style='display:none' >
+                        <br/>     <br/>
+                                    <button class="button">Play Demo</button>
+                                    </p>
+                                    <ul class="actions">
+                                        <li><button onclick="$('#of-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/game.png' %}" class="img-responsive" alt="Game controller">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/safe.png' %}" class="img-responsive" alt="Safe">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'askbot/images/portfolio/submarine.png' %}" class="img-responsive" alt="Submarine">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                        </section>
 
-    <!-- Contact Section -->
-    <section id="rules">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>{{ guide.lbl_rules }}</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p>{{ guide.txt_rules_1 }}</p>
-                    <p>{{ guide.txt_rules_2 }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>{{ guide.lbl_address }}</h3>
-                        <p>Zion</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>{{ guide.lbl_around_web }}</h3>
-                        <p>{{ guide.txt_around_web }}</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>{{ guide.lbl_about }}</h3>
-                        <p>{{ guide.txt_about }}<a href="">Link pagina about</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        Copyright &copy; August 2017
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-code"></span>
+									<h3>Lorem ipsum amet</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-lock"></span>
+									<h3>Aliquam sed nullam</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-chain"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-diamond"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="#bug-mail-form" class="button">Send bug</a></li>
+							</ul>
+						</div>
+					</section>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
+				<!-- Three -->
+					<section id="bug-mail-form" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="5"></textarea>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+							</div>
+						</div>
+					</section>
 
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_questing }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/ask_1.mp4">
-                                </video>    
-                            </div>                        
-                            <p>{{ guide.txt_questing_1 }}</p>
-                            <ul class="list-inline item-details">
-                                <li>{{ guide.txt_questing_2 }}</li>
-                                <li>{{ guide.txt_questing_3 }}</li>
-                                <li>{{ guide.txt_questing_4 }}</li>
-                                <li>{{ guide.txt_questing_5 }}</li>
-                                <li>{{ guide.txt_questing_6 }}</li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_answ }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/answer_1.mp4">
-                                </video>    
-                            </div>                
-                            <p>{{ guide.txt_answ_1 }}</p>
-                            <ul class="list-inline item-details">
-                                <li>{{ guide.txt_answ_2 }}</li>
-                                <li>{{ guide.txt_answ_3 }}</li>
-                                <li>{{ guide.txt_answ_4 }}</li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_reaction }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/reaction_1.mp4">
-                                </video> 
-                            </div>                   
-                            <p>{{ guide.txt_reaction_1 }}</p>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_contact }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/contact_1.mp4">
-                                </video>
-                            </div>                   
-                            <p>{{ guide.txt_contact_1 }}</p>
-                            <ul class="list-inline item-details">
-                                <li>{{ guide.txt_contact_2 }}</li>
-                                <li>{{ guide.txt_contact_3 }}</li>
-                                <li>{{ guide.txt_contact_4}}</li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_inline }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto"  muted="" loop="loop" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/inline_1.mp4">
-                                </video>  
-                            </div>                  
-                            <p>{{ guide.txt_inline_1 }}</p>
-                            <ul class="list-inline item-details">
-                                <li>{{ guide.txt_inline_2 }}</li>
-                                <li>{{ guide.txt_inline_3 }}</li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ guide.lbl_cmd }}</h2>
-                            <hr class="star-primary">
-                            <div class="img-centered">
-                                <video class="img-centered" loop muted preload="auto" width="720" height="1280">
-                                    <source type="video/mp4" src="{{ baseUrl }}/{{ language_code }}/cmd_1.mp4">
-                                </video>
-                            </div>                    
-                            <p>{{ guide.txt_cmd_1 }}</p>
-                            <ul class="list-inline item-details">
-                                <li>{{ guide.txt_cmd_2 }}</li>
-                                <li>{{ guide.txt_cmd_3 }}</li>
-                                <li>{{ guide.txt_cmd_4 }}</li>
-                                <li>{{ guide.txt_cmd_5 }}</li>
-                            </ul>
-                            <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> {{ guide.lbl_close }}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			</div>
 
-    <!-- jQuery -->
-    <script src="{% static 'askbot/vendor/jquery/jquery.min.js' %}"></script>
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; MIT License</li>
+					</ul>
+				</div>
+			</footer>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'askbot/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="{% static 'askbot/js/freelancer.min.js' %}"></script>
-
-</body>
-
+	</body>
 </html>
