@@ -23,8 +23,11 @@
         max-width: 100%;
         height: auto;
         width: auto;
-        margin: 0;
-        padding: 5%;
+        margin: 0 auto;
+        padding: 4.5rem;
+        @include breakpoint(medium) {
+            padding: 2rem;
+           }
     }
 
 	#who-am-i {
