@@ -1,25 +1,25 @@
 /* Who am i */
-    .decorative-image{
-&:before {
-                    @include vendor('transition', 'opacity #{_duration(activation)} ease');
-                    background: transparentize(_palette(bg), 0.1);
-                    content: '';
-                    display: block;
-                    height: 100%;
-                    left: 0;
-                    opacity: 0;
-                    position: absolute;
-                    top: 0;
-                    width: 100%;}
-  margin:5%;
-         @include breakpoint(medium) {
-           }
+.decorative-image{
+    &:before {
+        @include vendor('transition', 'opacity #{_duration(activation)} ease');
+        background: transparentize(_palette(bg), 0.1);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;}
+        margin:5%;
+        @include breakpoint(medium) {
+        }
         @include breakpoint(large) {
-         }
+        }
         @include breakpoint(small) {
-         }
+        }
 
-         display: block;
+        display: block;
         max-width: 100%;
         height: auto;
         width: auto;
@@ -27,10 +27,10 @@
         padding: 4.5rem;
         @include breakpoint(medium) {
             padding: 2rem;
-           }
+        }
     }
 
-	#who-am-i {
+    #who-am-i {
 
         margin-left: 0;
         margin-right: 0;
@@ -63,7 +63,7 @@
             }
         }
 
-		@include breakpoint(large) {
-			background-attachment: scroll;
-		}
-	}
+        @include breakpoint(large) {
+         background-attachment: scroll;
+     }
+ }
