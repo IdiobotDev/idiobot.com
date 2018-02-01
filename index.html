@@ -63,8 +63,11 @@
     <!-- One -->
     <section id="wcid" class="wrapper style2 spotlights">
       <section>
-        <div>
-            <img  class="decorative-image" src="assets/images/draw_quest.jpg"   >
+       <div>
+           <img src="assets/images/draw_quest.jpg" class="decorative-image" id="draw_ask">
+            <video loop="loop" class="decorative-image" style="display:none" id="vid_ask">
+              <source src="assets/images/ask_small.mp4" type="video/mp4" />
+            </video>
         </div>
         <div class="content">
             <div class="inner">
@@ -72,7 +75,8 @@
              <p>Sometimes, for example when you send me a file, I might be slow, if for a few seconds there won't be a sign of life from me, don’t worry, it’s normal. But if you waited too long, try sending me the file again: you can simply forward it</p>
              <p id='mq-hide' style='display:none' >     Sending more text or new files while putting a question will change the question itself, always considering the last inserted elements To edit a question before confirming it you can simply edit the message you sent to me before If the question you’re asking is identical to another question already posted it may not be accepted In order to avoid annoying spam, you can ask question every ten minutes In all the question you must enter the text, you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers
                  <br>     <br/>
-                 <button class="button">Play Demo</button>
+              <button id="btn_play_ask" class="button" onclick="showVideo('ask')">Play Demo</button>
+              <button id="btn_hide_ask" class="button" onclick="hideVideo('ask')" style="display:none">Hide</button>
              </p>
              <ul class="actions">
               <li><button onclick="$('#mq-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
@@ -82,17 +86,25 @@
 </section>
 <section>
    <div>
-    <img src="assets/images/draw_answ.jpg" class="decorative-image ">
+       <img src="assets/images/draw_answ.jpg" class="decorative-image" id="draw_answer">
+        <video loop="loop" class="decorative-image" style="display:none" id="vid_answer">
+          <source src="assets/images/answer_small.mp4" type="video/mp4" />
+        </video>
 </div>
 
 <div class="content">
     <div class="inner">
         <h2>Send an answer</h2>
         <p>In all the answers you can’t enter the text if there’s an attachment, (attachments allowed are the same of before). As for the question, you can edit the answer by sending new messages as long as you do not confirm it</p>
-        <p id='sa-hide' style='display:none' >You can’t answer to your question or to the ones you already answered As for questions you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers Per gli utenti della mela morsicata, l'allegato potrebbe non vedersi subito, basta uscire dalla chat e rientrarci
-            <br/>     <br/>
-            <button class="button">Play Demo</button>
-        </p>
+        <div id='sa-hide' style="display:none">
+          <ul>
+            <li>You can’t answer to your question or to the ones you already answered </li>
+            <li>As for questions you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers </li>
+            <li>Per gli utenti della mela morsicata, l'allegato potrebbe non vedersi subito, basta uscire dalla chat e rientrarci</li>
+          </ul>
+          <button id="btn_play_answer" class="button" onclick="showVideo('answer')">Play Demo</button>
+          <button id="btn_hide_answer" class="button" onclick="hideVideo('answer')" style="display:none">Hide</button>
+          </div>
         <ul class="actions">
             <li><button onclick="$('#sa-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
         </ul>
@@ -102,33 +114,41 @@
 </section>
 <section>
    <div>
-    <img src="assets/images/draw_reaction.jpg" class="decorative-image" >
-</div>
-<div class="content">
-    <div class="inner">
-        <h2>Submit reaction</h2>
-        <p>You can only add one reaction per answer and you can’t change it. Yes, you can add a reaction to your own answers… Let’s go autolikes!!</p>
-        <p id='sr-hide' style='display:none' >
-            <br/>     <br/>
-            <button class="button">Play Demo</button>
-        </p>
-        <ul class="actions">
-            <li><button onclick="$('#sr-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
-        </ul>
-    </div>
-</div>
+       <img src="assets/images/draw_reaction.jpg" class="decorative-image" id="draw_reaction">
+        <video loop="loop" class="decorative-image" style="display:none" id="vid_reaction">
+          <source src="assets/images/reaction_small.mp4" type="video/mp4" />
+        </video>
+  </div>
+  <div class="content">
+      <div class="inner">
+          <h2>Submit reaction</h2>
+          <p>You can only add one reaction per answer and you can’t change it. Yes, you can add a reaction to your own answers… Let’s go autolikes!!</p>
+          <p id='sr-hide' style='display:none' >
+              <br/>     <br/>
+          <button id="btn_play_reaction" class="button" onclick="showVideo('reaction')">Play Demo</button>
+          <button id="btn_hide_reaction" class="button" onclick="hideVideo('reaction')" style="display:none">Hide</button>
+          </p>
+          <ul class="actions">
+              <li><button onclick="$('#sr-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+          </ul>
+      </div>
+  </div>
 </section>
 <section>
    <div>
-    <img src="assets/images/draw_contact.jpg" class="decorative-image">
-</div>
+       <img src="assets/images/draw_contact.jpg" class="decorative-image" id="draw_contact">
+        <video loop="loop" class="decorative-image" style="display:none" id="vid_contact">
+          <source src="assets/images/contact_small.mp4" type="video/mp4" />
+        </video>
+   </div>
 <div class="content">
     <div class="inner">
         <h2>Contact someone</h2>
         <p>During our first interaction i’ll be asked you, if we allow the authors of the questions we are answering to contact you. For example, you ask a question and there is an answer that strikes you particularly and you’d like to contact him, you’ll receive the author’s presentation message so you could contact him <b>without knowing</b> the phone number.</p>
         <p id='cs-hide' style='display:none' >
           The button CONTACT will only be visible if the question is yours and the author of the answer has initially agreed to be contacted No one will have your phone number, not even me If tapping the “CONTACT” button nothing happens, the author may have unsubscribed    <br/>     <br/>
-          <button class="button">Play Demo</button>
+          <button id="btn_play_contact" class="button" onclick="showVideo('contact')">Play Demo</button>
+          <button id="btn_hide_contact" class="button" onclick="hideVideo('contact')" style="display:none">Hide</button>
       </p>
       <ul class="actions">
         <li><button onclick="$('#cs-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
@@ -138,11 +158,13 @@
 
 </section>
 <section>
-    <a  class="image decorative-image" >
-      <video autoplay="autoplay" loop="loop" alt="" data-position="center center" style="display: none;">
-       <source src="assets/images/inline.mp4" type="video/mp4" />
-   </video>
-</a>
+
+       <div>
+       <img src="assets/images/draw_inline.jpg" class="decorative-image" id="draw_inline">
+        <video loop="loop" class="decorative-image" style="display:none" id="vid_inline">
+          <source src="assets/images/inline_small.mp4" type="video/mp4" />
+        </video>
+      </div>
 							<!--
                         	<a href="#" class="image" style="background-image: url(&quot;assets/images/draw_inline.jpg&quot;); background-position: center center;">
 								<img src="assets/images/draw_inline.jpg" alt="" data-position="center center" style="display: none;">
@@ -156,7 +178,8 @@
                                To answer the question or to contact somebody you have to open a private chat with the bot, there’ll be a button that will automatically Pressing the “CONTACT” button or the “ANSWER” button, the “INLINE” will be filled with some parameters, do not change them. If they don’t give results it's because you probably can’t answer that question or contact that user
 
                                <br/>     <br/>
-                               <button class="button">Play Demo</button>
+                                <button id="btn_play_inline" class="button" onclick="showVideo('inline')">Play Demo</button>
+                                <button id="btn_hide_inline" class="button" onclick="hideVideo('inline')" style="display:none">Hide</button>
                            </p>
                            <ul class="actions">
                             <li><button onclick="$('#in-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
@@ -164,7 +187,13 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section>       
+              <div>
+               <img src="assets/images/draw_cmd.jpg" class="decorative-image" id="draw_cmd">
+                <video loop="loop" class="decorative-image" style="display:none" id="vid_cmd">
+                  <source src="assets/images/cmd_small.mp4" type="video/mp4" />
+                </video>
+              </div>
                 <div class="content">
                     <div class="inner">
                         <h2>Other functions</h2>
@@ -178,7 +207,8 @@
                             </p>
                             <p id='of-hide' style='display:none' >
                                 <br/>     <br/>
-                                <button class="button">Play Demo</button>
+                                <button id="btn_play_cmd" class="button" onclick="showVideo('cmd')">Play Demo</button>
+                                <button id="btn_hide_cmd" class="button" onclick="hideVideo('cmd')" style="display:none">Hide</button>
                             </p>
                             <ul class="actions">
                                 <li><button onclick="$('#of-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
@@ -205,83 +235,13 @@
         </div>
     </section>
 
-					<!-- Sitemap, add later
-					<section id="sitemap" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Sitemap</h2>
-							<div class="features">
-								<section>
-									<span class="icon major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-chain"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-diamond"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-						</div>
-					</section>
-				-->
-
-				<!-- Contact section, add maybe later in the sitemap
-					<section id="bug-mail-form" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class=" style1">
-								<section>
-									<form method="post" action="#">
-										<div class="field half first">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="5"></textarea>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-							</div>
-						</div>
-					</section>
-
-			</div>
 		-->
 		<!-- Footer -->
        <footer id="footer" class="wrapper alt">
         <div class="inner">
          <ul class="menu">
           <li>&copy; Untitled. All rights reserved.</li>
-          <li><a href="#">🇮🇹</a> - <a href="#">🇬🇧</a> - <a href="#">🇷🇺</a> - <a href="#">🇪🇸</a></li>
+          <li><a href="#">IT 🇮🇹</a> - <a href="#">EN 🇬🇧</a> - <a href="#">Ru 🇷🇺</a> - <a href="#">ES 🇪🇸</a></li>
           <li><a href="/about">About</a></li>
          </ul>
          </div>
@@ -295,6 +255,35 @@
 <script src="assets/js/util.js"></script>
 <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+  
+  function showVideo(section){
+      $("#draw_"+section).hide();
+      $("#vid_"+section).get(0).play();
+      $("#vid_"+section).fadeIn();
+
+      $("#btn_play_"+section).hide();
+      $("#btn_hide_"+section).fadeIn();
+
+      $('html, body').animate({
+        scrollTop: $("#vid_"+section).offset().top
+    }, 1000);
+  }
+
+  function hideVideo(section){
+      $("#draw_"+section).fadeIn();
+      $("#vid_"+section).hide();
+      var video = $("#vid_"+section).get(0);
+      video.currentTime = 0;
+      video.pause()
+
+
+      $("#btn_play_"+section).fadeIn();
+      $("#btn_hide_"+section).hide();
+  }
+
+</script>
 
 </body>
 </html>
