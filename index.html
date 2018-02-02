@@ -73,13 +73,14 @@
             <div class="inner">
              <h2>Make a question</h2>
              <p>Sometimes, for example when you send me a file, I might be slow, if for a few seconds there won't be a sign of life from me, don’t worry, it’s normal. But if you waited too long, try sending me the file again: you can simply forward it</p>
-             <p id='mq-hide' style='display:none' >     Sending more text or new files while putting a question will change the question itself, always considering the last inserted elements To edit a question before confirming it you can simply edit the message you sent to me before If the question you’re asking is identical to another question already posted it may not be accepted In order to avoid annoying spam, you can ask question every ten minutes In all the question you must enter the text, you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers
+             <div id="moretext_ask" style='display:none' >     
+              Sending more text or new files while putting a question will change the question itself, always considering the last inserted elements To edit a question before confirming it you can simply edit the message you sent to me before If the question you’re asking is identical to another question already posted it may not be accepted In order to avoid annoying spam, you can ask question every ten minutes In all the question you must enter the text, you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers
                  <br>     <br/>
               <button id="btn_play_ask" class="button" onclick="showVideo('ask')">Play Demo</button>
               <button id="btn_hide_ask" class="button" onclick="hideVideo('ask')" style="display:none">Hide</button>
-             </p>
+             </div>
              <ul class="actions">
-              <li><button onclick="$('#mq-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+              <li><button id="btn_moretxt_ask" onclick="$('#moretext_ask').fadeIn();$(this).hide()" class="button">Learn more</button></li>
           </ul>
       </div>
   </div>
@@ -96,7 +97,7 @@
     <div class="inner">
         <h2>Send an answer</h2>
         <p>In all the answers you can’t enter the text if there’s an attachment, (attachments allowed are the same of before). As for the question, you can edit the answer by sending new messages as long as you do not confirm it</p>
-        <div id='sa-hide' style="display:none">
+        <div id='moretext_answer' style="display:none">
           <ul>
             <li>You can’t answer to your question or to the ones you already answered </li>
             <li>As for questions you can attach (maximum size 5MB): pictures, gifs, videos, audios, stickers </li>
@@ -104,9 +105,9 @@
           </ul>
           <button id="btn_play_answer" class="button" onclick="showVideo('answer')">Play Demo</button>
           <button id="btn_hide_answer" class="button" onclick="hideVideo('answer')" style="display:none">Hide</button>
-          </div>
+        </div>
         <ul class="actions">
-            <li><button onclick="$('#sa-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+            <li><button id="btn_moretxt_answer" onclick="$('#moretext_answer').fadeIn();$(this).hide()" class="button">Learn more</button></li>
         </ul>
     </div>
 </div>
@@ -123,13 +124,12 @@
       <div class="inner">
           <h2>Submit reaction</h2>
           <p>You can only add one reaction per answer and you can’t change it. Yes, you can add a reaction to your own answers… Let’s go autolikes!!</p>
-          <p id='sr-hide' style='display:none' >
-              <br/>     <br/>
-          <button id="btn_play_reaction" class="button" onclick="showVideo('reaction')">Play Demo</button>
-          <button id="btn_hide_reaction" class="button" onclick="hideVideo('reaction')" style="display:none">Hide</button>
-          </p>
+          <div id='moretext_reaction' style='display:none' >
+            <button id="btn_play_reaction" class="button" onclick="showVideo('reaction')">Play Demo</button>
+            <button id="btn_hide_reaction" class="button" onclick="hideVideo('reaction')" style="display:none">Hide</button>
+          </div>
           <ul class="actions">
-              <li><button onclick="$('#sr-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+              <li><button id="btn_moretxt_reaction" onclick="$('#moretext_reaction').fadeIn();$(this).hide()" class="button">Learn more</button></li>
           </ul>
       </div>
   </div>
@@ -145,46 +145,40 @@
     <div class="inner">
         <h2>Contact someone</h2>
         <p>During our first interaction i’ll be asked you, if we allow the authors of the questions we are answering to contact you. For example, you ask a question and there is an answer that strikes you particularly and you’d like to contact him, you’ll receive the author’s presentation message so you could contact him <b>without knowing</b> the phone number.</p>
-        <p id='cs-hide' style='display:none' >
+        <p id='moretext_contact' style='display:none' >
           The button CONTACT will only be visible if the question is yours and the author of the answer has initially agreed to be contacted No one will have your phone number, not even me If tapping the “CONTACT” button nothing happens, the author may have unsubscribed    <br/>     <br/>
           <button id="btn_play_contact" class="button" onclick="showVideo('contact')">Play Demo</button>
           <button id="btn_hide_contact" class="button" onclick="hideVideo('contact')" style="display:none">Hide</button>
       </p>
       <ul class="actions">
-        <li><button onclick="$('#cs-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+        <li><button id="btn_moretxt_contact" onclick="$('#moretext_contact').fadeIn();$(this).hide()" class="button">Learn more</button></li>
     </ul>
 </div>
 </div>
 
 </section>
-<section>
+            <section>
+                   <div>
+                   <img src="assets/images/draw_inline.jpg" class="decorative-image" id="draw_inline">
+                    <video loop="loop" class="decorative-image" style="display:none" id="vid_inline">
+                      <source src="assets/images/inline_small.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                   <div class="content">
+                    <div class="inner">
+                        <h2>Inline</h2>
+                        <p>If you use INLINE to ask a question, the confirmation message will be sent in the chat in which you are and also it will be visible by everybody. Whoever presses the confirm button will be the author of the question, be fast</p>
+                        <p id='moretext_inline' style='display:none' >
+                           To answer the question or to contact somebody you have to open a private chat with the bot, there’ll be a button that will automatically Pressing the “CONTACT” button or the “ANSWER” button, the “INLINE” will be filled with some parameters, do not change them. If they don’t give results it's because you probably can’t answer that question or contact that user
 
-       <div>
-       <img src="assets/images/draw_inline.jpg" class="decorative-image" id="draw_inline">
-        <video loop="loop" class="decorative-image" style="display:none" id="vid_inline">
-          <source src="assets/images/inline_small.mp4" type="video/mp4" />
-        </video>
-      </div>
-							<!--
-                        	<a href="#" class="image" style="background-image: url(&quot;assets/images/draw_inline.jpg&quot;); background-position: center center;">
-								<img src="assets/images/draw_inline.jpg" alt="" data-position="center center" style="display: none;">
-							</a>
-                       -->
-                       <div class="content">
-                        <div class="inner">
-                            <h2>Inline</h2>
-                            <p>If you use INLINE to ask a question, the confirmation message will be sent in the chat in which you are and also it will be visible by everybody. Whoever presses the confirm button will be the author of the question, be fast</p>
-                            <p id='in-hide' style='display:none' >
-                               To answer the question or to contact somebody you have to open a private chat with the bot, there’ll be a button that will automatically Pressing the “CONTACT” button or the “ANSWER” button, the “INLINE” will be filled with some parameters, do not change them. If they don’t give results it's because you probably can’t answer that question or contact that user
-
-                               <br/>     <br/>
-                                <button id="btn_play_inline" class="button" onclick="showVideo('inline')">Play Demo</button>
-                                <button id="btn_hide_inline" class="button" onclick="hideVideo('inline')" style="display:none">Hide</button>
-                           </p>
-                           <ul class="actions">
-                            <li><button onclick="$('#in-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
-                        </ul>
-                    </div>
+                           <br/>     <br/>
+                            <button id="btn_play_inline" class="button" onclick="showVideo('inline')">Play Demo</button>
+                            <button id="btn_hide_inline" class="button" onclick="hideVideo('inline')" style="display:none">Hide</button>
+                       </p>
+                       <ul class="actions">
+                        <li><button id="btn_moretxt_inline" onclick="$('#moretext_inline').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                    </ul>
+                  </div>
                 </div>
             </section>
             <section>       
@@ -205,13 +199,13 @@
                                 <li><strong>/mylastquest: </strong>I send to you your last question (in case you lost it) </li>
                                 <li><strong>/bug: </strong>For any suggestion use this command, wait for my answer and then write what you want to tell me </li></ul>
                             </p>
-                            <p id='of-hide' style='display:none' >
+                            <p id='moretext_cmd' style='display:none' >
                                 <br/>     <br/>
                                 <button id="btn_play_cmd" class="button" onclick="showVideo('cmd')">Play Demo</button>
                                 <button id="btn_hide_cmd" class="button" onclick="hideVideo('cmd')" style="display:none">Hide</button>
                             </p>
                             <ul class="actions">
-                                <li><button onclick="$('#of-hide').fadeIn();$(this).hide()" class="button">Learn more</button></li>
+                                <li><button id="btn_moretxt_cmd" onclick="$('#moretext_cmd').fadeIn();$(this).hide()" class="button">Learn more</button></li>
                             </ul>
                         </div>
                     </div>
@@ -235,7 +229,6 @@
         </div>
     </section>
 
-		-->
 		<!-- Footer -->
        <footer id="footer" class="wrapper alt">
         <div class="inner">
@@ -257,6 +250,7 @@
 <script src="assets/js/main.js"></script>
 
 <script type="text/javascript">
+
   
   function showVideo(section){
       $("#draw_"+section).hide();
@@ -274,6 +268,8 @@
   function hideVideo(section){
       $("#draw_"+section).fadeIn();
       $("#vid_"+section).hide();
+      $("#moretext_"+section).hide();
+      $("#btn_moretxt_"+section).fadeIn();
       var video = $("#vid_"+section).get(0);
       video.currentTime = 0;
       video.pause()
