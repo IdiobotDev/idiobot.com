@@ -1,0 +1,59 @@
+/* Who am i */
+.decorative-image{
+
+        margin:5%;
+        @include breakpoint(medium) {
+        }
+        @include breakpoint(large) {
+        }
+        @include breakpoint(small) {
+        }
+
+        display: block;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+        padding: 4.5rem;
+        @include breakpoint(medium) {
+            padding: 2rem;
+        }
+    }
+
+    #who-am-i {
+
+        margin-left: 0;
+        margin-right: 0;
+
+        p {
+            font-size: 1.6em;
+
+            @include breakpoint(medium) {
+                br {
+                    display: none;
+                }
+            }
+
+            @include breakpoint(small) {
+                font-size: 1.25em;
+            }
+        }
+
+        a {
+            font-size: 0.8em;
+
+            @include breakpoint(medium) {
+                br {
+                    display: none;
+                }
+            }
+
+            @include breakpoint(small) {
+                font-size: 0.8em;
+            }
+        }
+
+        @include breakpoint(large) {
+         background-attachment: scroll;
+     }
+ }
